@@ -85,3 +85,9 @@ task :clear_caches do
     execute :wp, :eval, '"do_action( \'cache_flush\' );"'
   end
 end
+
+desc "Update the utils.rake"
+task :update do
+  system "wget -O lib/capistrano/tasks/utils.rake https://raw.githubusercontent.com/stuntcoders/capistrano_utils/main/wp-utils.rake"
+end
+
